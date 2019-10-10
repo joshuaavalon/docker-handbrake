@@ -37,6 +37,8 @@ ARG HANDBRAKE_DEBUG_MODE=none
 # Define working directory.
 WORKDIR /tmp
 
+RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && apk update
+
 # Compile HandBrake, libva and Intel Media SDK.
 RUN \
     add-pkg --virtual build-dependencies \
