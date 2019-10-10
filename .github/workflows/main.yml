@@ -14,3 +14,5 @@ jobs:
         run: docker login docker.pkg.github.com --username joshuaavalon -p ${{ secrets.PERSONAL_TOKEN }}
       - name: build
         run: docker build -t docker.pkg.github.com/joshuaavalon/docker-handbrake/master .
+      - name: push
+        run: docker push docker.pkg.github.com/joshuaavalon/docker-handbrake/master
