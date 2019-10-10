@@ -13,6 +13,6 @@ jobs:
       - name: Login
         run: docker login docker.pkg.github.com -u joshuaavalon -p ${{ secrets.PERSONAL_TOKEN }}
       - name: build
-        run: docker build -t docker.pkg.github.com/joshuaavalon/docker-handbrake/master .
+        run: docker build -t docker.pkg.github.com/joshuaavalon/docker-handbrake/handbrake .
       - name: push
-        run: docker push docker.pkg.github.com/joshuaavalon/docker-handbrake/master
+        run: docker push docker.pkg.github.com/joshuaavalon/docker-handbrake/handbrake
