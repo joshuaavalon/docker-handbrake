@@ -1,0 +1,16 @@
+name: master
+on:
+  push:
+    branches:
+      - master
+jobs:
+  docker:
+    name: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: Login
+        run: docker login docker.pkg.github.com --username joshuaavalon ${{ secrets.PERSONAL_TOKEN }}
+      - name: build
+        run: docker build -t docker.pkg.github.com/joshuaavalon/docker-handbrake/master .
